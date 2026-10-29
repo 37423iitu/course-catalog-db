@@ -1,0 +1,10 @@
+                                 version                                 | current_database | current_user 
+-------------------------------------------------------------------------+------------------+--------------
+ PostgreSQL 17.4 on x86_64-windows, compiled by msvc-19.42.34436, 64-bit | course_catalog   | catalog_app
+(1 row)
+
+ rolsuper | rolcreatedb | rolcreaterole 
+----------+-------------+---------------
+ f        | f           | f
+(1 row)
+

@@ -1,0 +1,11 @@
+BEGIN
+INSERT 0 1
+ROLLBACK
+ madina_after_rollback 
+-----------------------
+                     0
+(1 row)
+
+psql:C:/Users/user/.codex/.chatgpt-projects/g-p-6ac51903b4f881919915ad28893d152c/course-catalog-db/experiments/transactions.sql:6: ERROR:  insert or update on table "enrollments" violates foreign key constraint "enrollments_course_id_fkey"
+DETAIL:  Key (course_id)=(no-such-course) is not present in table "courses".
+psql:C:/Users/user/.codex/.chatgpt-projects/g-p-6ac51903b4f881919915ad28893d152c/course-catalog-db/experiments/transactions.sql:8: ERROR:  current transaction is aborted, commands ignored until end of transaction block

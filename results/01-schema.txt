@@ -1,0 +1,10 @@
+BEGIN
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE INDEX
+COMMIT
+psql:C:/Users/user/.codex/.chatgpt-projects/g-p-6ac51903b4f881919915ad28893d152c/course-catalog-db/schema.sql:4: NOTICE:  table "enrollments" does not exist, skipping
+psql:C:/Users/user/.codex/.chatgpt-projects/g-p-6ac51903b4f881919915ad28893d152c/course-catalog-db/schema.sql:4: NOTICE:  table "students" does not exist, skipping
+psql:C:/Users/user/.codex/.chatgpt-projects/g-p-6ac51903b4f881919915ad28893d152c/course-catalog-db/schema.sql:4: NOTICE:  table "courses" does not exist, skipping

@@ -1,0 +1,12 @@
+Existing catalog preserved.
+          id          |              title               | likes 
+----------------------+----------------------------------+-------
+ ai-integration       | AI/LLM Integration               |    32
+ api-design           | API Design: REST vs GraphQL      |    11
+ backend-fastapi      | Backend Foundations: FastAPI     |    19
+ databases-postgresql | Relational Databases: PostgreSQL |    15
+ modern-frontend      | Modern Frontend: React & Next.js |    24
+ web-security         | Web Security Essentials          |    21
+(6 rows)
+
+Database: 127.0.0.1:55439/course_catalog; role catalog_app
