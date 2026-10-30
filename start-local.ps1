@@ -44,7 +44,11 @@ if ($LASTEXITCODE -ne 0) {
     $startArgs = @('-D', ('"' + $dataDir + '"'), '-l', ('"' + $logPath + '"'), '-o', ('"-h 127.0.0.1 -p ' + $Port + '"'), '-w', 'start')
     $started = Start-Process -FilePath $ctl -ArgumentList $startArgs -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $localDir 'start.stdout.log') -RedirectStandardError (Join-Path $localDir 'start.stderr.log')
     $started.WaitForExit()
-    if ($started.ExitCode -ne 0) { throw 'PostgreSQL failed to start. See .local/server.log.' }
+    # Windows PowerShell may expose a null Process.ExitCode even when pg_ctl
+    # succeeds. Check the listening server instead; authenticated SQL below
+    # additionally verifies that the expected catalog is available.
+    & (Join-Path $PgBin 'pg_isready.exe') -h 127.0.0.1 -p $Port -t 5 -q
+    if ($LASTEXITCODE -ne 0) { throw 'PostgreSQL failed to start. See .local/server.log.' }
 }
 $oldPassword = $env:PGPASSWORD
 $oldAppPassword = $env:CATALOG_DB_PASSWORD
